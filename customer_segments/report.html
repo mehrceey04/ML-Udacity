@@ -22484,7 +22484,7 @@ Once you have performed this implementation, the dataset will be stored in the v
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[264]:</div>
+<div class="prompt input_prompt">In&nbsp;[302]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">outliers</span> <span class="o">=</span> <span class="p">[]</span>
@@ -26658,7 +26658,7 @@ AwAAACCx/j+VlHvb60H0yQAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[287]:</div>
+<div class="prompt input_prompt">In&nbsp;[299]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Display the predictions</span>
@@ -26900,7 +26900,7 @@ Sample point 2 predicted to be in Cluster 1
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[292]:</div>
+<div class="prompt input_prompt">In&nbsp;[305]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Display the clustering results based on &#39;Channel&#39; data</span>
@@ -27540,8 +27540,28 @@ wAMAAAAgsgh4AAAAAEQWAQ8AAACAyCLgAQAAABBZ/x9iL/bHcr/4yAAAAABJRU5ErkJggg==
 <p><strong>Answer:</strong></p>
 <ul>
 <li>The number of clusters I chose and that of the above underlying distribution is the same (both have two(2) clusters). Hence, the clustering algorithm did well.</li>
-<li>Yes, there are customer segments that would be classified as purely 'Retailers' or 'Hotels/Restaurants/Cafes' by this distribution on the extreme left and right respectively.</li>
-<li>The classification for the underlying distribution above seems to be consistent with my previous definition of the customer segments where <code>"segment 0"</code> customers are restaurants, supermarkets or grocery stores and <code>"segment 1"</code> customers are fresh/frozen food retailers.</li>
+</ul>
+<ul>
+<li>Yes, there are customer segments that would be classified as purely 'Hotels/Restaurants/Cafes' or 'Retailers' by this distribution on the extreme left and right respectively.</li>
+</ul>
+<ul>
+<li>The classification for the underlying distribution above seems to be consistent with my previous definition of the customer segments where <code>"segment 0"</code> customers are restaurants, supermarkets or grocery stores and <code>"segment 1"</code> customers are Fresh/Frozen food vendors (Although, Retailers might not intuitively fit into how I defined <code>"segment 1"</code> as fresh/frozen food vendors).</li>
+</ul>
+<ul>
+<li><p>In the above image, I also noticed that two(2) of the sample points are not labelled in the same segment I predicted them to be previously. Below is my prediction:</p>
+<ul>
+<li>Sample point 0 predicted to be in Cluster 1 (Fresh/Frozen food vendors or Retailers)</li>
+<li>Sample point 1 predicted to be in Cluster 0 (Restaurants/Supermarkets/Grocery stores or Hotels/Restaurants/Cafes)</li>
+<li>Sample point 2 predicted to be in Cluster 1 (Fresh/Frozen food vendors or Retailers)</li>
+</ul>
+</li>
+<li><p>But the image above which displays the clustering results based on 'Channel' data shows:</p>
+<ul>
+<li>Sample point 0 in Cluster 'Retailer'</li>
+<li>Sample point 1 in Cluster 'Retailer'</li>
+<li>Sample point 2 in Cluster 'Hotels/Restaurants/Cafes'</li>
+</ul>
+</li>
 </ul>
 
 </div>
