@@ -16827,8 +16827,6 @@ zMzMrEkcYJmZmZmZmTWJAywzMzMzM7Mm+X+TmRj9BquRBAAAAABJRU5ErkJggg==
 </li>
 </ul>
 </li>
-</ul>
-<ul>
 <li><p>In example 1, the policy correctly identified that it is unsafe and wasteful to stay idle when there is a green light. And it also learned to move away from it's waypoint if it is safe, rather than staying idle. But in this example, it moved in the direction of its waypoint because that has the highest value.</p>
 </li>
 <li><p>In example 2, the policy also correctly identified that it's safe to move forward when the light is green.</p>
@@ -16837,7 +16835,52 @@ zMzMrEkcYJmZmZmZmTWJAywzMzMzM7Mm+X+TmRj9BquRBAAAAABJRU5ErkJggg==
 </li>
 <li><p>In example 4, the policy correctly identified that it also learned to move away from it's waypoint when it is unsafe, rather than staying idle or moving in an unsafe direction. This suggests the Q-Learner has learned to always move, and it depicts there is a priority for safety over reliability, which coincides with the overall performance of A for reliability, and A+ for safety.</p>
 </li>
+<li><p>The examples below show some of the cases were the policy differs from the optimal policy:</p>
+<ul>
+<li><p>('right', 'red', 'forward', 'left', 'right')</p>
+<ul>
+<li>forward : -0.16</li>
+<li>None : 0.04</li>
+<li>right : 0.00</li>
+<li>left : 0.00</li>
 </ul>
+</li>
+<li><p>('right', 'red', 'right', 'right', None)</p>
+<ul>
+<li>forward : 0.00</li>
+<li>None : 0.01</li>
+<li>right : 0.00</li>
+<li>left : 0.00</li>
+</ul>
+</li>
+<li><p>('right', 'red', None, 'right', 'forward')</p>
+<ul>
+<li>forward : -0.04</li>
+<li>None : 0.03</li>
+<li>right : 0.00</li>
+<li>left : -0.02</li>
+</ul>
+</li>
+<li><p>('forward', 'green', 'right', 'right', 'left')</p>
+<ul>
+<li>forward : 0.00</li>
+<li>None : 0.00</li>
+<li>right : 0.00</li>
+<li>left : 0.01</li>
+</ul>
+</li>
+<li><p>('left', 'green', 'left', 'right', 'forward')</p>
+<ul>
+<li>forward : 0.02</li>
+<li>None : 0.00</li>
+<li>right : 0.00</li>
+<li>left : 0.00</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>In the above cases, the optimal action should be turning to the <code>right</code> direction when the light is <code>red</code>, and turning to the specified waypoint (<code>forward</code> and <code>left</code>) when the light is <code>green</code>. But the driving agent chose to wait, causing no accidents but delay in arrival time.</p>
 
 </div>
 </div>
